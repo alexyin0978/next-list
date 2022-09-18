@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image"; //this allows lazy load
 
 
+
 const Nav = () => {
   return ( 
     <nav>

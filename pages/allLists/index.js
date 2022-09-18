@@ -1,6 +1,7 @@
 //hooks
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 
 //style
 import styles from '../../styles/AllLists.module.css';
@@ -21,8 +22,6 @@ export const getStaticProps = async () => {
 
 const AllLists = ({ lists }) => {
 
-  console.log(lists)
-
   return (
     <>
       <Head>
@@ -36,9 +35,11 @@ const AllLists = ({ lists }) => {
         {
           lists.map(list => (
             <div key={list.id}>
-              <a className={styles.single}>
-                <h3>{list.name}</h3>
-              </a>
+              <Link href={`/allLists/${list.id}`}>
+                <a className={styles.single}>
+                  <h3>{list.name}</h3>
+                </a>
+              </Link>
             </div>
           ))
         }
